@@ -1,0 +1,27 @@
+﻿@model WebApplication1.Models.Step1
+
+@*
+    Built by Dennis Turner
+*@
+@{
+}
+<H1>Hello, please enter a number.</H1>
+
+@using (Html.BeginForm("DisplayList","Step1", FormMethod.Post))
+{
+    <div>
+        <div>@Html.TextBoxFor(m => Model.MyNum)</div>
+        <input type="submit" />
+    </div>
+}
+
+<table>
+    @{
+        foreach (var Mynum in Model.MyNum)
+        {
+            <tr>
+                Number: @Mynum.MyNum
+            </tr>
+        }
+    }
+</table>
